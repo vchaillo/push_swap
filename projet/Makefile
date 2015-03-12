@@ -17,7 +17,7 @@ CC	=	gcc
 CFLAGS	+=	-Wall -Wextra -Werror
 
 SRC	=	main.c \
-		error.c \
+		check.c \
 
 LIBFT	=	-Llibft/ -lft
 
