@@ -1,5 +1,18 @@
 #include "push_swap.h"
 
+static	void	print_list(t_env *e)
+{
+	t_lst	*tmp;
+
+	tmp = e->a;
+	while (tmp != NULL)
+	{
+		ft_putnbr(tmp->val);
+		ft_putstr(", ");
+		tmp = tmp->next;
+	}
+}
+
 static	void	create_new_element(t_env *e, char *arg)
 {
 	t_lst	*new;
@@ -9,34 +22,32 @@ static	void	create_new_element(t_env *e, char *arg)
 		ft_putendl("memory allocation failed");
 		exit (0);
 	}
-	(void)e;
-	(void)arg;
-	ft_putendl("seg seg seg segfaullllltttt!!!!");
-	e->a->val = ft_atoi(arg);
-	//e->a->next = e->a;
+	new->val = ft_atoi(arg);
+	new->next = e->a;
+	e->a = new;
 }
 
 static	void	create_list_ab(t_env *e, int ac, char **av)
 {
-	int	i;
-
-	i = 1;
 	if (!(e->a = (t_lst *)malloc(sizeof(t_lst))))
 	{
 		ft_putendl("memory allocation failed");
 		exit (0);
 	}
-	e->a->val = ft_atoi(av[i]);
-	ft_putendl("seg seg seg segfaullllltttt!!!!");
-	//e->a->next = NULL;		// Why this fucking segfault?
-	//e->b->next = NULL;
-	i = ac;
-	while (i > 1)
+	e->a->val = ft_atoi(av[ac - 1]);
+	e->a->next = NULL;
+	if (!(e->b = (t_lst *)malloc(sizeof(t_lst))))
 	{
-		create_new_element(e, av[i]);
-		i--;
+		ft_putendl("memory allocation failed");
+		exit (0);
 	}
-	
+	e->b->next = NULL;
+	while (ac > 2)
+	{
+		create_new_element(e, av[ac - 2]);
+		ac--;
+	}
+	print_list(e);
 }
 
 static	void	error_msg(void)
@@ -49,12 +60,15 @@ int		main(int ac, char **av)
 {
 	t_env	e;
 
+	e.a = NULL;
+	e.b = NULL;
 	if (ac > 2)
 	{
 		if (check_arg(ac, av) == TRUE)
 		{
-			ft_putendl("done!");
+			ft_putendl("no error detected");
 			create_list_ab(&e, ac, av);
+			ft_putendl("etat de la liste a");
 			//sort_stack();
 		}
 		else
