@@ -11,6 +11,7 @@ static	void	print_list(t_env *e)
 		ft_putstr(", ");
 		tmp = tmp->next;
 	}
+	ft_putchar('\n');
 }
 
 static	void	create_new_element(t_env *e, char *arg)
@@ -36,12 +37,14 @@ static	void	create_list_ab(t_env *e, int ac, char **av)
 	}
 	e->a->val = ft_atoi(av[ac - 1]);
 	e->a->next = NULL;
+	e->nb_elem_a = ac - 1;
 	if (!(e->b = (t_lst *)malloc(sizeof(t_lst))))
 	{
 		ft_putendl("memory allocation failed");
 		exit (0);
 	}
 	e->b->next = NULL;
+	e->nb_elem_b = 0;
 	while (ac > 2)
 	{
 		create_new_element(e, av[ac - 2]);
