@@ -12,6 +12,16 @@
 # define SA 2
 # define SB 3
 
+# define RR 1
+# define RA 2
+# define RB 3
+# define RRR 4
+# define RRA 5
+# define RRB 6
+
+# define PA 1
+# define PB 2
+
 # define MAX 2147483647
 # define MIN -2147483648
 
@@ -34,5 +44,7 @@ typedef struct		s_env
 
 int			check_arg(int ac, char **av);
 void			swap_choose(t_env *e, int op);
+void			rotate_choose(t_env *e, int op);
+void			push_choose(t_env *e, int op);
 
 #endif

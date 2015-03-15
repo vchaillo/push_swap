@@ -19,6 +19,7 @@ CFLAGS	+=	-Wall -Wextra -Werror
 SRC	=	main.c \
 		check.c \
 		swap.c \
+		rotate.c \
 
 LIBFT	=	-Llibft/ -lft
 

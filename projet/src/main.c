@@ -69,11 +69,19 @@ int		main(int ac, char **av)
 		{
 			ft_putendl("no error detected\n");
 			create_list_ab(&e, ac, av);
-			ft_putstr("etat de la liste a avant SA : ");
+			ft_putstr("etat de la liste a avant RA : ");
 			print_list(&e);
 			ft_putchar('\n');
-			swap_choose(&e, SA);
-			ft_putstr("etat de la liste a apres SA : ");
+			//swap_choose(&e, SA);
+			//ft_putstr("etat de la liste a apres SA : ");
+			//print_list(&e);
+			//ft_putchar('\n');
+			rotate_choose(&e, RA);
+			ft_putstr("etat de la liste a apres RA : ");
+			print_list(&e);
+			ft_putchar('\n');
+			rotate_choose(&e, RRA);
+			ft_putstr("etat de la liste a apres RRA: ");
 			print_list(&e);
 			ft_putchar('\n');
 			//sort_stack();
