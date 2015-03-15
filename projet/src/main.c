@@ -1,10 +1,10 @@
 #include "push_swap.h"
 
-static	void	print_list(t_env *e)
+static	void	print_list(t_lst *list)
 {
 	t_lst	*tmp;
 
-	tmp = e->a;
+	tmp = list;
 	while (tmp != NULL)
 	{
 		ft_putnbr(tmp->val);
@@ -37,12 +37,6 @@ static	void	create_list_ab(t_env *e, int ac, char **av)
 	e->a->val = ft_atoi(av[ac - 1]);
 	e->a->next = NULL;
 	e->nb_elem_a = ac - 1;
-	if (!(e->b = (t_lst *)malloc(sizeof(t_lst))))
-	{
-		ft_putendl("memory allocation failed");
-		exit (0);
-	}
-	e->b->next = NULL;
 	e->nb_elem_b = 0;
 	while (ac > 2)
 	{
@@ -69,21 +63,32 @@ int		main(int ac, char **av)
 		{
 			ft_putendl("no error detected\n");
 			create_list_ab(&e, ac, av);
-			ft_putstr("etat de la liste a avant RA : ");
+
+			/*do_swap(&e, SA);
+			ft_putstr("etat de la liste a apres SA : ");
 			print_list(&e);
 			ft_putchar('\n');
-			//swap_choose(&e, SA);
-			//ft_putstr("etat de la liste a apres SA : ");
-			//print_list(&e);
-			//ft_putchar('\n');
-			rotate_choose(&e, RA);
+			do_rotate(&e, RA);
 			ft_putstr("etat de la liste a apres RA : ");
-			print_list(&e);
+			print_list(e.a);
 			ft_putchar('\n');
-			rotate_choose(&e, RRA);
+			do_rotate(&e, RRA);
 			ft_putstr("etat de la liste a apres RRA: ");
-			print_list(&e);
+			print_list(e.a);
+			ft_putchar('\n');*/
+			
+			ft_putstr("liste a: ");
+			print_list(e.a);
+			ft_putstr(" liste b: ");
+			print_list(e.b);
 			ft_putchar('\n');
+			do_push(&e, PB);
+			ft_putstr("liste a: ");
+			print_list(e.a);
+			ft_putstr(" liste b: ");
+			print_list(e.b);
+			ft_putchar('\n');
+
 			//sort_stack();
 		}
 		else

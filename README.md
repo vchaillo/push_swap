@@ -5,9 +5,9 @@ Todo list:
 ==========
 - \ dans les parametres
 - Peaufiner la gestion d'erreur
-- Creer la liste
-- Creer les fontions de swap rotate et push
 - Implementer algo de tri des piles
+- Verification de chaque free pour chaque malloc
+- Free la liste a apres impression
 - Gestion des bonus
 
 A verifier avant rendu:
@@ -15,4 +15,5 @@ A verifier avant rendu:
 - Verifier la norme
 - Verifier les fonctions interdites
 - Gestion d'erreur
+- Gestion des leaks
 - Test avec les commandes ruby

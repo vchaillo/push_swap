@@ -9,7 +9,7 @@ static	void	list_swap(t_lst *lst)
 	lst->next->val = tmp;
 }
 
-void	swap_choose(t_env *e, int op)
+void	do_swap(t_env *e, int op)
 {
 	if (op == SS)
 	{

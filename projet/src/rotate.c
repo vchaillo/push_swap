@@ -46,7 +46,7 @@ static	void	list_rotate(t_lst *list)
 	}
 }
 
-void		rotate_choose(t_env *e, int op)
+void		do_rotate(t_env *e, int op)
 {
 	if (op == RR)
 	{

@@ -20,6 +20,7 @@ SRC	=	main.c \
 		check.c \
 		swap.c \
 		rotate.c \
+		push.c \
 
 LIBFT	=	-Llibft/ -lft
 
