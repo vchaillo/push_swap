@@ -57,6 +57,7 @@ int		main(int ac, char **av)
 
 	e.a = NULL;
 	e.b = NULL;
+	e.sort_type = SELECTION;
 	if (ac > 2)
 	{
 		if (check_arg(ac, av) == TRUE)
@@ -64,11 +65,11 @@ int		main(int ac, char **av)
 			ft_putendl("no error detected\n");
 			create_list_ab(&e, ac, av);
 
-			/*do_swap(&e, SA);
+			do_swap(&e, SA);
 			ft_putstr("etat de la liste a apres SA : ");
-			print_list(&e);
+			print_list(e.a);
 			ft_putchar('\n');
-			do_rotate(&e, RA);
+			/*do_rotate(&e, RA);
 			ft_putstr("etat de la liste a apres RA : ");
 			print_list(e.a);
 			ft_putchar('\n');
@@ -77,19 +78,20 @@ int		main(int ac, char **av)
 			print_list(e.a);
 			ft_putchar('\n');*/
 			
-			ft_putstr("liste a: ");
+			/*ft_putstr("liste a: ");
 			print_list(e.a);
 			ft_putstr(" liste b: ");
 			print_list(e.b);
 			ft_putchar('\n');
 			do_push(&e, PB);
+			do_push(&e, PA);
 			ft_putstr("liste a: ");
 			print_list(e.a);
 			ft_putstr(" liste b: ");
 			print_list(e.b);
-			ft_putchar('\n');
+			ft_putchar('\n');*/
 
-			//sort_stack();
+			sort(&e);
 		}
 		else
 			error_msg();

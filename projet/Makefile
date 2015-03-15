@@ -21,6 +21,7 @@ SRC	=	main.c \
 		swap.c \
 		rotate.c \
 		push.c \
+		selection.c \
 
 LIBFT	=	-Llibft/ -lft
 
