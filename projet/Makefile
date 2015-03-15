@@ -18,6 +18,7 @@ CFLAGS	+=	-Wall -Wextra -Werror
 
 SRC	=	main.c \
 		check.c \
+		swap.c \
 
 LIBFT	=	-Llibft/ -lft
 

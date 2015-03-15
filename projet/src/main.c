@@ -11,7 +11,6 @@ static	void	print_list(t_env *e)
 		ft_putstr(", ");
 		tmp = tmp->next;
 	}
-	ft_putchar('\n');
 }
 
 static	void	create_new_element(t_env *e, char *arg)
@@ -50,7 +49,6 @@ static	void	create_list_ab(t_env *e, int ac, char **av)
 		create_new_element(e, av[ac - 2]);
 		ac--;
 	}
-	print_list(e);
 }
 
 static	void	error_msg(void)
@@ -69,9 +67,15 @@ int		main(int ac, char **av)
 	{
 		if (check_arg(ac, av) == TRUE)
 		{
-			ft_putendl("no error detected");
+			ft_putendl("no error detected\n");
 			create_list_ab(&e, ac, av);
-			ft_putendl("etat de la liste a");
+			ft_putstr("etat de la liste a avant SA : ");
+			print_list(&e);
+			ft_putchar('\n');
+			swap_choose(&e, SA);
+			ft_putstr("etat de la liste a apres SA : ");
+			print_list(&e);
+			ft_putchar('\n');
 			//sort_stack();
 		}
 		else
