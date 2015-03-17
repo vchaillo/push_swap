@@ -62,36 +62,13 @@ int		main(int ac, char **av)
 	{
 		if (check_arg(ac, av) == TRUE)
 		{
-			ft_putendl("no error detected\n");
 			create_list_ab(&e, ac, av);
-
-			do_swap(&e, SA);
-			ft_putstr("etat de la liste a apres SA : ");
 			print_list(e.a);
 			ft_putchar('\n');
-			/*do_rotate(&e, RA);
-			ft_putstr("etat de la liste a apres RA : ");
-			print_list(e.a);
-			ft_putchar('\n');
-			do_rotate(&e, RRA);
-			ft_putstr("etat de la liste a apres RRA: ");
-			print_list(e.a);
-			ft_putchar('\n');*/
-			
-			/*ft_putstr("liste a: ");
-			print_list(e.a);
-			ft_putstr(" liste b: ");
-			print_list(e.b);
-			ft_putchar('\n');
-			do_push(&e, PB);
-			do_push(&e, PA);
-			ft_putstr("liste a: ");
-			print_list(e.a);
-			ft_putstr(" liste b: ");
-			print_list(e.b);
-			ft_putchar('\n');*/
-
 			sort(&e);
+			ft_putchar('\n');
+			print_list(e.a);
+			ft_putchar('\n');
 		}
 		else
 			error_msg();

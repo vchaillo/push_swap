@@ -59,8 +59,6 @@ static	int	check_min_max(int ac, char **av)
 	while (i < ac)
 	{
 		val = double_atoi(av[i]);
-		ft_putnbr(val);
-		ft_putstr(", ");
 		if (val > MAX || val < MIN)
 			return (FALSE);
 		i++;

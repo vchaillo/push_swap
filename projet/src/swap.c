@@ -15,9 +15,16 @@ void	do_swap(t_env *e, int op)
 	{
 		list_swap(e->a);
 		list_swap(e->b);
+		ft_putstr("ss ");
 	}
 	else if (op == SA)
+	{
 		list_swap(e->a);
+		ft_putstr("sa ");
+	}
 	else if (op == SB)
+	{
 		list_swap(e->b);
+		ft_putstr("sb ");
+	}
 }

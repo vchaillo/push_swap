@@ -8,20 +8,21 @@
 # define TRUE 0
 # define FALSE 1
 
-# define SS 1
-# define SA 2
-# define SB 3
-
 # define SELECTION 1
 # define INSERTION 2
 # define BUBBLE 3
 
+# define SS 1
+# define SA 2
+# define SB 3
+
 # define RR 1
 # define RA 2
 # define RB 3
-# define RRR 4
-# define RRA 5
-# define RRB 6
+
+# define RRR 1
+# define RRA 2
+# define RRB 3
 
 # define PB 1
 # define PA 2
@@ -50,6 +51,7 @@ typedef struct		s_env
 int			check_arg(int ac, char **av);
 void			do_swap(t_env *e, int op);
 void			do_rotate(t_env *e, int op);
+void			do_reverse_rotate(t_env *e, int op);
 void			do_push(t_env *e, int op);
 void			sort(t_env *e);
 
