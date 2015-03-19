@@ -43,16 +43,17 @@ typedef struct		s_env
 	int		option_v;
 	int		option_n;
 	int		option_c;
-	int		sort_type;
 	t_lst		*a;
 	t_lst		*b;
 }			t_env;
 
 int			check_arg(int ac, char **av);
+void			sort(t_env *e);
+int			simple_sort(t_env *e);
+void			print_list(t_lst *list);
 void			do_swap(t_env *e, int op);
 void			do_rotate(t_env *e, int op);
 void			do_reverse_rotate(t_env *e, int op);
 void			do_push(t_env *e, int op);
-void			sort(t_env *e);
-void			print_list(t_lst *list);
+
 #endif

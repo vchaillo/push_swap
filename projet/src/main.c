@@ -45,14 +45,16 @@ int		main(int ac, char **av)
 
 	e.a = NULL;
 	e.b = NULL;
-	e.sort_type = SELECTION;
-	e.option_v = TRUE;
+	e.option_v = FALSE;
 	if (ac > 2)
 	{
 		if (check_arg(ac, av) == TRUE)
 		{
 			create_list_ab(&e, ac, av);
+			if (e.nb_elem_a > 2)
+				simple_sort(&e);
 			sort(&e);
+			print_list(e.a);
 		}
 		else
 			error_msg();
