@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 21:35:07 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/19 23:20:24 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 00:11:39 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,29 @@ static	void	error_msg(void)
 	exit (0);
 }
 
+static	void	init(t_env *e)
+{
+	e->option_a = FALSE;
+	e->option_c = FALSE;
+	e->option_v = FALSE;
+	e->option_n = FALSE;
+	e->a = NULL;
+	e->b = NULL;
+	e->end = FALSE;
+	e->nb_op = 0;
+}
+
 int				main(int ac, char **av)
 {
 	t_env	e;
 
-	e.a = NULL;
-	e.b = NULL;
-	e.end = FALSE;
-	e.nb_op = 0;
+	init(&e);
 	if (ac > 2)
 	{
 		parse_options(&e, av);
-		if (check_arg(ac, av) == TRUE)
+		if (check_arg(ac - e.nb_options, av + e.nb_options) == TRUE)
 		{
-			create_list_ab(&e, ac, av);
+			create_list_ab(&e, ac - e.nb_options, av + e.nb_options);
 			sort(&e);
 			ft_putchar('\n');
 			if (e.option_n == TRUE)
