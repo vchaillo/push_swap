@@ -1,4 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   options.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/19 21:53:00 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/19 22:30:33 by vchaillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
+
+static	void	print_list(t_lst *list)
+{
+	t_lst	*tmp;
+
+	tmp = list;
+	while (tmp != NULL)
+	{
+		ft_putnbr(tmp->val);
+		ft_putstr(", ");
+		tmp = tmp->next;
+	}
+	ft_putchar('\n');
+}
 
 static	void	option_v(t_env *e)
 {
@@ -59,7 +85,7 @@ static	void	print_op_color(int op)
 	ft_putchar(' ');
 }
 
-void		options(t_env *e, int op)
+void			options(t_env *e, int op)
 {
 	if (e->option_c == TRUE)
 		print_op_color(op);

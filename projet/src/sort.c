@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/19 21:55:25 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/19 22:03:47 by vchaillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static	void	choose_rotate_way(t_env *e, int dist, int *way)
 {
-	int	i;
+	int		i;
 
 	if (dist <= (e->nb_elem_a / 2))
 	{
@@ -29,9 +41,9 @@ static	void	choose_rotate_way(t_env *e, int dist, int *way)
 static	void	get_min_first(t_env *e, t_lst *list, int *way)
 {
 	t_lst	*tmp;
-	int	min;
-	int	dist;
-	int	i;
+	int		min;
+	int		dist;
+	int		i;
 
 	tmp = list;
 	dist = 0;
@@ -50,10 +62,10 @@ static	void	get_min_first(t_env *e, t_lst *list, int *way)
 	choose_rotate_way(e, dist, way);
 }
 
-static	int	is_sort(t_lst *list)
+static	int		is_sort(t_lst *list)
 {
 	t_lst	*tmp;
-	int	nb;
+	int		nb;
 
 	tmp = list;
 	while (tmp != NULL)
@@ -66,48 +78,9 @@ static	int	is_sort(t_lst *list)
 	return (1);
 }
 
-int		simple_sort(t_env *e)
+void			sort(t_env *e)
 {
-	t_lst	*tmp;
-	int	i;
-	int	nb;
-
-	if (e->nb_elem_a == 3)
-	{
-		if (e->a->val > e->a->next->val &&
-			e->a->next->val > e->a->next->next->val)
-		{
-			do_swap(e, SA);
-			do_reverse_rotate(e, RRA);
-		}
-	}
-	if (e->a->val > e->a->next->val &&
-		e->a->next->val < e->a->next->next->val)
-		do_swap(e, SA);
-	i = 0;
-	tmp = e->a;
-	while (i < e->nb_elem_a - 2)
-	{
-		nb = tmp->val;
-		if (tmp->next->val < nb)
-			return (0);
-		tmp = tmp->next;
-		i++;
-	}
-	if (tmp->val > tmp->next->val)
-	{
-			do_reverse_rotate(e, RRA);
-			do_reverse_rotate(e, RRA);
-			do_swap(e, SA);
-			do_rotate(e, RA);
-			do_rotate(e, RA);
-	}
-	return (1);
-}
-
-void		sort(t_env *e)
-{
-	int	way;
+	int		way;
 
 	if (e->nb_elem_a > 2)
 		simple_sort(e);

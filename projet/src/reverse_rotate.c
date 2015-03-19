@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/19 21:54:13 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/19 21:54:14 by vchaillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static	void	list_reverse_rotate(t_lst *list)
 {
-	int	temp;
-	int	temp2;
-	int	temp3;
+	int		temp;
+	int		temp2;
+	int		temp3;
 	t_lst	*tmp;
 
 	tmp = list;
@@ -29,7 +41,7 @@ static	void	list_reverse_rotate(t_lst *list)
 	list->val = temp;
 }
 
-void		do_reverse_rotate(t_env *e, int op)
+void			do_reverse_rotate(t_env *e, int op)
 {
 	if (op == RRR)
 	{

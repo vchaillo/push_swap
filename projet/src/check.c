@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/19 21:52:32 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/19 23:00:21 by vchaillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static double	double_atoi(const char *str)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	double	result;
 
 	i = 0;
@@ -27,10 +39,10 @@ static double	double_atoi(const char *str)
 	return (result * sign);
 }
 
-static	int	check_digit(int ac, char **av)
+static	int		check_digit(int ac, char **av)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 1;
 	while (i < ac)
@@ -50,10 +62,10 @@ static	int	check_digit(int ac, char **av)
 	return (TRUE);
 }
 
-static	int	check_min_max(int ac, char **av)
+static	int		check_min_max(int ac, char **av)
 {
 	double	val;
-	int	i;
+	int		i;
 
 	i = 1;
 	while (i < ac)
@@ -66,10 +78,10 @@ static	int	check_min_max(int ac, char **av)
 	return (TRUE);
 }
 
-static	int	check_double(int ac, char **av)
+static	int		check_double(int ac, char **av)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 1;
 	while (i < ac)
@@ -86,7 +98,7 @@ static	int	check_double(int ac, char **av)
 	return (TRUE);
 }
 
-int		check_arg(int ac, char **av)
+int				check_arg(int ac, char **av)
 {
 	if ((check_digit(ac, av) == FALSE))
 		return (FALSE);

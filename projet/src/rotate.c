@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/19 21:54:26 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/19 21:54:48 by vchaillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static	void	list_rotate(t_lst *list)
 {
-	int	temp;
+	int		temp;
 	t_lst	*tmp;
 
 	tmp = list;
@@ -17,7 +29,7 @@ static	void	list_rotate(t_lst *list)
 	}
 }
 
-void		do_rotate(t_env *e, int op)
+void			do_rotate(t_env *e, int op)
 {
 	if (op == RR)
 	{

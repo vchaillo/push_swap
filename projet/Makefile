@@ -6,7 +6,7 @@
 #    By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/20 18:44:07 by jbarbie           #+#    #+#              #
-#    Updated: 2015/03/01 22:35:35 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/03/19 23:10:10 by vchaillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -18,13 +18,14 @@ CFLAGS	+=	-Wall -Wextra -Werror
 
 SRC	=	main.c \
 		check.c \
-		print.c \
 		swap.c \
 		rotate.c \
 		push.c \
 		sort.c \
+		sort2.c \
 		reverse_rotate.c \
-		options.c
+		options.c \
+		parser.c \
 
 LIBFT	=	-Llibft/ -lft
 
@@ -42,17 +43,17 @@ $(NAME): obj $(OBJ)
 
 obj/%.o: src/%.c
 		@$(CC) $(CFLAGS) $(INC) -o $@ -c $<
-		@echo "[\033[1;32m√\033[m]" $<
+		@echo "[\033[32m√\033[m]" $<
 
 obj:
 		@mkdir -p obj
 
 clean:
-		@echo "\033[33;31mCleaning files .o ...\033[0m"
+		@echo "\033[31;1mCleaning files .o ...\033[0m"
 		@$(RM) obj/
 
 fclean:	clean
-		@echo "\033[33;31mCleaning executables...\033[0m"
+		@echo "\033[31;1mCleaning executables...\033[0m"
 		@$(RM) $(NAME)
 
 norm:

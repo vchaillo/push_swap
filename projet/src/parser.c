@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/03/19 21:53:36 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/19 21:53:53 by vchaillo         ###   ########.fr       */
+/*   Created: 2015/03/19 22:11:15 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/19 23:20:40 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		do_push(t_env *e, int op)
+void	parse_options(t_env *e, char **av)
 {
-	t_lst	*tmp;
-
-	if (op == PB)
-	{
-		tmp = e->a;
-		e->a = e->a->next;
-		tmp->next = e->b;
-		e->b = tmp;
-		e->nb_elem_a--;
-		e->nb_elem_b++;
-	}
-	if (op == PA)
-	{
-		tmp = e->b;
-		e->b = e->b->next;
-		tmp->next = e->a;
-		e->a = tmp;
-		e->nb_elem_a++;
-		e->nb_elem_b--;
-	}
-	options(e, op);
-	e->nb_op++;
+	e->option_v = TRUE;
+	e->option_n = TRUE;
+	e->option_c = TRUE;
+	(void)av;
 }

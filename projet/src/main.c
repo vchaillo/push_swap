@@ -1,5 +1,16 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/19 21:35:07 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/19 23:20:24 by vchaillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "push_swap.h"
 
 static	void	create_new_element(t_env *e, char *arg)
 {
@@ -39,19 +50,17 @@ static	void	error_msg(void)
 	exit (0);
 }
 
-int		main(int ac, char **av)
+int				main(int ac, char **av)
 {
 	t_env	e;
 
 	e.a = NULL;
 	e.b = NULL;
-	e.option_v = FALSE;
-	e.option_n = TRUE;
-	e.option_c = TRUE;
 	e.end = FALSE;
 	e.nb_op = 0;
 	if (ac > 2)
 	{
+		parse_options(&e, av);
 		if (check_arg(ac, av) == TRUE)
 		{
 			create_list_ab(&e, ac, av);
@@ -59,7 +68,7 @@ int		main(int ac, char **av)
 			ft_putchar('\n');
 			if (e.option_n == TRUE)
 			{
-				ft_putstr("Nombre d'operations = \033[31m");
+				ft_putstr("Nombre d'operations = \033[31;1m");
 				ft_putnbr(e.nb_op);
 				ft_putchar('\n');
 			}

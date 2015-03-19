@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/03/19 21:51:25 by vchaillo          #+#    #+#             */
+/*   Updated: 2015/03/19 23:10:27 by vchaillo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -29,31 +41,32 @@
 
 typedef	struct		s_lst
 {
-	int		val;
-	struct	s_lst	*next;
-}			t_lst;
+	int				val;
+	struct s_lst	*next;
+}					t_lst;
 
 typedef struct		s_env
 {
-	int		nb_elem_a;
-	int		nb_elem_b;
-	int		option_v;
-	int		option_n;
-	int		option_c;
-	int		nb_op;
-	int		end;
-	t_lst		*a;
-	t_lst		*b;
-}			t_env;
+	int				nb_elem_a;
+	int				nb_elem_b;
+	int				nb_options;
+	int				option_v;
+	int				option_n;
+	int				option_c;
+	int				nb_op;
+	int				end;
+	t_lst			*a;
+	t_lst			*b;
+}					t_env;
 
-int			check_arg(int ac, char **av);
-void			sort(t_env *e);
-int			simple_sort(t_env *e);
-void			print_list(t_lst *list);
-void			do_swap(t_env *e, int op);
-void			do_rotate(t_env *e, int op);
-void			do_reverse_rotate(t_env *e, int op);
-void			do_push(t_env *e, int op);
-void			options(t_env *e, int op);
+int					check_arg(int ac, char **av);
+void				parse_options(t_env *e, char **av);
+void				sort(t_env *e);
+void				simple_sort(t_env *e);
+void				do_swap(t_env *e, int op);
+void				do_rotate(t_env *e, int op);
+void				do_reverse_rotate(t_env *e, int op);
+void				do_push(t_env *e, int op);
+void				options(t_env *e, int op);
 
 #endif
