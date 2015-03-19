@@ -29,4 +29,5 @@ void		do_push(t_env *e, int op)
 		print_list(e->a);
 		ft_putchar('\n');
 	}
+	e->nb_op++;
 }

@@ -43,6 +43,7 @@ typedef struct		s_env
 	int		option_v;
 	int		option_n;
 	int		option_c;
+	int		nb_op;
 	t_lst		*a;
 	t_lst		*b;
 }			t_env;

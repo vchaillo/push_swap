@@ -46,6 +46,8 @@ int		main(int ac, char **av)
 	e.a = NULL;
 	e.b = NULL;
 	e.option_v = FALSE;
+	e.option_n = TRUE;
+	e.nb_op = 0;
 	if (ac > 2)
 	{
 		if (check_arg(ac, av) == TRUE)
@@ -54,7 +56,12 @@ int		main(int ac, char **av)
 			if (e.nb_elem_a > 2)
 				simple_sort(&e);
 			sort(&e);
+			ft_putchar('\n');
 			print_list(e.a);
+			ft_putchar('\n');
+			ft_putstr("Nombre d'operations = ");
+			ft_putnbr(e.nb_op);
+			ft_putchar('\n');
 		}
 		else
 			error_msg();
