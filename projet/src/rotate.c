@@ -35,11 +35,6 @@ void		do_rotate(t_env *e, int op)
 		list_rotate(e->b);
 		ft_putstr("rb ");
 	}
-	if (e->option_v == TRUE)
-	{
-		ft_putstr("\033[32mListe a : \033[0m");
-		print_list(e->a);
-		ft_putchar('\n');
-	}
+	options(e, op);
 	e->nb_op++;
 }

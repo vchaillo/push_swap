@@ -24,6 +24,7 @@ SRC	=	main.c \
 		push.c \
 		sort.c \
 		reverse_rotate.c \
+		options.c
 
 LIBFT	=	-Llibft/ -lft
 

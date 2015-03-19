@@ -15,17 +15,14 @@
 # define SS 1
 # define SA 2
 # define SB 3
-
-# define RR 1
-# define RA 2
-# define RB 3
-
-# define RRR 1
-# define RRA 2
-# define RRB 3
-
-# define PB 1
-# define PA 2
+# define RR 4
+# define RA 5
+# define RB 6
+# define RRR 7
+# define RRA 8
+# define RRB 9
+# define PB 0
+# define PA -1
 
 # define MAX 2147483647
 # define MIN -2147483648
@@ -44,6 +41,7 @@ typedef struct		s_env
 	int		option_n;
 	int		option_c;
 	int		nb_op;
+	int		end;
 	t_lst		*a;
 	t_lst		*b;
 }			t_env;
@@ -56,5 +54,6 @@ void			do_swap(t_env *e, int op);
 void			do_rotate(t_env *e, int op);
 void			do_reverse_rotate(t_env *e, int op);
 void			do_push(t_env *e, int op);
+void			options(t_env *e, int op);
 
 #endif

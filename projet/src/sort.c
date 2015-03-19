@@ -109,6 +109,8 @@ void		sort(t_env *e)
 {
 	int	way;
 
+	if (e->nb_elem_a > 2)
+		simple_sort(e);
 	while (e->a->next != NULL)
 	{
 		get_min_first(e, e->a, &way);

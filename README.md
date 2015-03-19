@@ -5,9 +5,9 @@ Todo list:
 ==========
 - \ dans les parametres
 - Peaufiner la gestion d'erreur
-- Implementer algo de tri des piles
 - Free la liste a apres impression
 - Gestion des bonus
+- Gestion du dernier espace
 
 A verifier avant rendu:
 ======================
@@ -15,4 +15,4 @@ A verifier avant rendu:
 - Verifier les fonctions interdites
 - Gestion d'erreur
 - Gestion des leaks
-- Test avec les commandes ruby
+- Enlever wildcard Makefile norm

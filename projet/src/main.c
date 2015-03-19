@@ -45,23 +45,23 @@ int		main(int ac, char **av)
 
 	e.a = NULL;
 	e.b = NULL;
-	e.option_v = FALSE;
+	e.option_v = TRUE;
 	e.option_n = TRUE;
+	e.end = FALSE;
 	e.nb_op = 0;
 	if (ac > 2)
 	{
 		if (check_arg(ac, av) == TRUE)
 		{
 			create_list_ab(&e, ac, av);
-			if (e.nb_elem_a > 2)
-				simple_sort(&e);
 			sort(&e);
 			ft_putchar('\n');
-			print_list(e.a);
-			ft_putchar('\n');
-			ft_putstr("Nombre d'operations = ");
-			ft_putnbr(e.nb_op);
-			ft_putchar('\n');
+			if (e.option_n == TRUE)
+			{
+				ft_putstr("Nombre d'operations = \033[31m");
+				ft_putnbr(e.nb_op);
+				ft_putchar('\n');
+			}
 		}
 		else
 			error_msg();

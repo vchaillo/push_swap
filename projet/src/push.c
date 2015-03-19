@@ -23,11 +23,6 @@ void		do_push(t_env *e, int op)
 		e->nb_elem_b--;
 		ft_putstr("pa ");
 	}
-	if (e->option_v == TRUE)
-	{
-		ft_putstr("\033[32mListe a : \033[0m");
-		print_list(e->a);
-		ft_putchar('\n');
-	}
+	options(e, op);
 	e->nb_op++;
 }

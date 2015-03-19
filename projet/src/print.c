@@ -11,4 +11,5 @@ void	print_list(t_lst *list)
 		ft_putstr(", ");
 		tmp = tmp->next;
 	}
+	ft_putchar('\n');
 }
