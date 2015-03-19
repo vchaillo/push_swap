@@ -54,5 +54,5 @@ void			do_rotate(t_env *e, int op);
 void			do_reverse_rotate(t_env *e, int op);
 void			do_push(t_env *e, int op);
 void			sort(t_env *e);
-
+void			print_list(t_lst *list);
 #endif

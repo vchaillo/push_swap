@@ -1,17 +1,5 @@
 #include "push_swap.h"
 
-static	void	print_list(t_lst *list)
-{
-	t_lst	*tmp;
-
-	tmp = list;
-	while (tmp != NULL)
-	{
-		ft_putnbr(tmp->val);
-		ft_putstr(", ");
-		tmp = tmp->next;
-	}
-}
 
 static	void	create_new_element(t_env *e, char *arg)
 {
@@ -58,22 +46,16 @@ int		main(int ac, char **av)
 	e.a = NULL;
 	e.b = NULL;
 	e.sort_type = SELECTION;
+	e.option_v = TRUE;
 	if (ac > 2)
 	{
 		if (check_arg(ac, av) == TRUE)
 		{
 			create_list_ab(&e, ac, av);
-			print_list(e.a);
-			ft_putchar('\n');
 			sort(&e);
-			ft_putchar('\n');
-			print_list(e.a);
-			ft_putchar('\n');
 		}
 		else
 			error_msg();
 	}
-	else
-		error_msg();
 	return (0);
 }

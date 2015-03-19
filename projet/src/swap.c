@@ -27,4 +27,10 @@ void	do_swap(t_env *e, int op)
 		list_swap(e->b);
 		ft_putstr("sb ");
 	}
+	if (e->option_v == TRUE)
+	{
+		ft_putstr("\033[32mListe a : \033[0m");
+		print_list(e->a);
+		ft_putchar('\n');
+	}
 }

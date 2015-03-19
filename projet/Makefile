@@ -18,6 +18,7 @@ CFLAGS	+=	-Wall -Wextra -Werror
 
 SRC	=	main.c \
 		check.c \
+		print.c \
 		swap.c \
 		rotate.c \
 		push.c \

@@ -47,6 +47,7 @@ static	int	get_min_first(t_env *e, t_lst *list, int *way)
 	{
 		if (min > tmp->val)
 		{
+			min = tmp->val;
 			dist = i;
 		}
 		tmp = tmp->next;
@@ -55,20 +56,40 @@ static	int	get_min_first(t_env *e, t_lst *list, int *way)
 	nb = choose_rotate_way(e, dist, way);
 	return (nb);
 }
+
+static	int	is_sort(t_lst *list)
+{
+	t_lst	*tmp;
+	int	nb;
+
+	tmp = list;
+	while (tmp != NULL)
+	{
+		nb = tmp->val;
+		if (tmp->next && tmp->next->val < nb)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
 static	void	selection_sort(t_env *e)
 {
 	int	nb;
 	int	way;
 
+	nb = 0;
 	while (e->a->next != NULL)
 	{
 		nb = get_min_first(e, e->a, &way);
+		if (is_sort(e->a))
+			break ;
 		do_push(e, PB);
 		while (nb > 0)
 		{
-			if (way == 1)
-				do_rotate(e, RA);
 			if (way == -1)
+				do_rotate(e, RA);
+			if (way == 1)
 				do_reverse_rotate(e, RRA);
 			nb--;
 		}
