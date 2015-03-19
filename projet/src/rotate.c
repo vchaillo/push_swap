@@ -26,15 +26,9 @@ void		do_rotate(t_env *e, int op)
 		ft_putstr("rr ");
 	}
 	else if (op == RA)
-	{
 		list_rotate(e->a);
-		ft_putstr("ra ");
-	}
 	else if (op == RB)
-	{
 		list_rotate(e->b);
-		ft_putstr("rb ");
-	}
 	options(e, op);
 	e->nb_op++;
 }

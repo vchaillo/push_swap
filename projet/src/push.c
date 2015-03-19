@@ -11,7 +11,6 @@ void		do_push(t_env *e, int op)
 		e->b = tmp;
 		e->nb_elem_a--;
 		e->nb_elem_b++;
-		ft_putstr("pb ");
 	}
 	if (op == PA)
 	{
@@ -21,7 +20,6 @@ void		do_push(t_env *e, int op)
 		e->a = tmp;
 		e->nb_elem_a++;
 		e->nb_elem_b--;
-		ft_putstr("pa ");
 	}
 	options(e, op);
 	e->nb_op++;

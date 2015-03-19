@@ -45,8 +45,9 @@ int		main(int ac, char **av)
 
 	e.a = NULL;
 	e.b = NULL;
-	e.option_v = TRUE;
+	e.option_v = FALSE;
 	e.option_n = TRUE;
+	e.option_c = TRUE;
 	e.end = FALSE;
 	e.nb_op = 0;
 	if (ac > 2)

@@ -38,15 +38,9 @@ void		do_reverse_rotate(t_env *e, int op)
 		ft_putstr("rrr ");
 	}
 	else if (op == RRA)
-	{
 		list_reverse_rotate(e->a);
-		ft_putstr("rra ");
-	}
 	else if (op == RRB)
-	{
 		list_reverse_rotate(e->b);
-		ft_putstr("rrb ");
-	}
 	options(e, op);
 	e->nb_op++;
 }
