@@ -4,10 +4,7 @@ push_swap
 Todo list:
 ==========
 - \ dans les parametres
-- Peaufiner la gestion d'erreur
 - Free la liste a apres impression
-- Gestion des bonus
-- Gestion du dernier espace
 
 A verifier avant rendu:
 ======================

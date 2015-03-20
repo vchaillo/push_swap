@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 21:55:25 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/20 03:03:27 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 03:35:00 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@ void			sort(t_env *e)
 	}
 	while (e->b != NULL)
 	{
+		if (e->nb_elem_b == 1)
+			e->end = TRUE;
 		do_push(e, PA);
 	}
 }

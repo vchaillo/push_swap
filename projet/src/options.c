@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 21:53:00 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/20 02:59:11 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 03:33:49 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static	void	option_v(t_env *e)
 	print_list(e->b);
 }
 
-static	void	print_op(int op)
+static	void	print_op(t_env *e, int op)
 {
 	if (op == RA)
 		ft_putstr("ra");
@@ -57,10 +57,11 @@ static	void	print_op(int op)
 		ft_putstr("pa");
 	else if (op == PB)
 		ft_putstr("pb");
-	ft_putchar(' ');
+	if (e->end == FALSE)
+		ft_putchar(' ');
 }
 
-static	void	print_op_color(int op)
+static	void	print_op_color(t_env *e, int op)
 {
 	if (op == RA)
 		ft_putstr("\033[32mra\033[0m");
@@ -69,7 +70,7 @@ static	void	print_op_color(int op)
 	else if (op == RR)
 		ft_putstr("rr");
 	else if (op == RRA)
-		ft_putstr("\033[34;1mrra\033[0m");
+		ft_putstr("\033[33;1mrra\033[0m");
 	else if (op == RRB)
 		ft_putstr("rrb");
 	else if (op == RRR)
@@ -79,18 +80,19 @@ static	void	print_op_color(int op)
 	else if (op == SB)
 		ft_putstr("sb");
 	else if (op == PA)
-		ft_putstr("\033[33;1mpa\033[0m");
+		ft_putstr("\033[36mpa\033[0m");
 	else if (op == PB)
-		ft_putstr("\033[31mpb\033[0m");
-	ft_putchar(' ');
+		ft_putstr("\033[31;1mpb\033[0m");
+	if (e->end == FALSE)
+		ft_putchar(' ');
 }
 
 void			options(t_env *e, int op)
 {
 	if (e->option_c == TRUE)
-		print_op_color(op);
+		print_op_color(e, op);
 	if (e->option_c == FALSE)
-		print_op(op);
+		print_op(e, op);
 	if (e->option_v == TRUE)
 		option_v(e);
 }
