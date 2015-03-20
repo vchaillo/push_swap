@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 21:35:07 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/20 00:11:39 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 03:05:35 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ static	void	error_msg(void)
 
 static	void	init(t_env *e)
 {
-	e->option_a = FALSE;
 	e->option_c = FALSE;
 	e->option_v = FALSE;
 	e->option_n = FALSE;
+	e->nb_options = 0;
 	e->a = NULL;
 	e->b = NULL;
 	e->end = FALSE;

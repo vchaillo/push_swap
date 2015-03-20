@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 21:54:13 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/19 21:54:14 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 02:57:38 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void			do_reverse_rotate(t_env *e, int op)
 	{
 		list_reverse_rotate(e->a);
 		list_reverse_rotate(e->b);
-		ft_putstr("rrr ");
 	}
 	else if (op == RRA)
 		list_reverse_rotate(e->a);

@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 21:54:26 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/19 21:54:48 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 02:57:26 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void			do_rotate(t_env *e, int op)
 	{
 		list_rotate(e->a);
 		list_rotate(e->b);
-		ft_putstr("rr ");
 	}
 	else if (op == RA)
 		list_rotate(e->a);

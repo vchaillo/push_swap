@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 21:51:25 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/20 00:00:45 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 02:43:05 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ typedef struct		s_env
 	int				option_v;
 	int				option_n;
 	int				option_c;
-	int				option_a;
 	int				nb_op;
 	int				end;
 	t_lst			*a;
