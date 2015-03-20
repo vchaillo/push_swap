@@ -6,7 +6,7 @@
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 21:35:07 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/20 03:39:25 by vchaillo         ###   ########.fr       */
+/*   Updated: 2015/03/20 03:52:54 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int				main(int ac, char **av)
 				ft_putnbr(e.nb_op);
 				ft_putchar('\n');
 			}
-
 		}
 		else
 			error_msg();
