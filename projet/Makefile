@@ -6,7 +6,7 @@
 #    By: jbarbie <jbarbie@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/20 18:44:07 by jbarbie           #+#    #+#              #
-#    Updated: 2015/03/20 02:42:57 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/03/22 01:28:39 by vchaillo         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,23 +27,26 @@ SRC	=	main.c \
 		options.c \
 		parser.c \
 
-LIBFT	=	-Llibft/ -lft
+LIBFT =	-Llibft/ -lft
 
-INC	=	-I inc/ -I libft/includes/
+INC	= -I inc/ -I libft/includes/
 
-OBJ	=	$(patsubst %.c, obj/%.o, $(SRC))
+OBJ	= $(patsubst %.c, obj/%.o, $(SRC))
 
-RM	=	rm -Rf
+RM = rm -Rf
 
-all:   $(NAME)
+all: $(NAME)
 
-
-$(NAME): obj $(OBJ)
+$(NAME): lft obj $(OBJ)
 		@$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBMLX) $(LIBFT)
 
 obj/%.o: src/%.c
 		@$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 		@echo "[\033[32m√\033[m]" $<
+
+lft:
+		@make -C libft fclean
+		@make -C libft
 
 obj:
 		@mkdir -p obj

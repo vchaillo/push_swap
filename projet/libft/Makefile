@@ -6,7 +6,7 @@
 #    By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 15:04:37 by vchaillo          #+#    #+#              #
-#    Updated: 2015/01/28 14:54:42 by vchaillo         ###   ########.fr        #
+#    Updated: 2015/03/22 01:27:43 by vchaillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 NAME = libft.a
@@ -40,34 +40,14 @@ $(NAME):
 	@mv $(OBJS) $(OBJS_PATH)
 	@echo "\033[32mlibft.a was created\033[0m"
 
-test1: rm
-	@gcc -o test1 libft.a correction/main1.c -I ../
-	@echo "\033[32mcompilation test1 OK\033[0m"
-
-test2: rm
-	@gcc -o test2 libft.a correction/main2.c -I ../
-	@echo "\033[33mcompilation test2 OK\033[0m"
-
-test3: rm
-	@gcc -o test3 libft.a correction/main3.c -I ../
-	@echo "\033[32mcompilation test3 OK\033[0m"
-norm:
-	@echo "\033[32mnorminette...\033[0m"
-	@norminette $(SRCS) libft.h
-
-rm:
-	@rm -f test1
-	@rm -f test2
-	@rm -f test3
-
 clean:
 	@rm -rf $(OBJS_PATH)
-	@echo "\033[31mSuppression des .o de la libft\033[0m"
+	@echo "\033[31;1mSuppression des .o de la libft\033[0m"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "\033[31mSuppression libft.a\033[0m"
+	@echo "\033[31;1mSuppression libft.a\033[0m"
 
 re: fclean all
 
-.PHONY: all check test norm rm clean fclean re
+.PHONY: all clean fclean re
