@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vchaillo <vchaillo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/22 01:05:12 by vchaillo          #+#    #+#             */
-/*   Updated: 2015/03/20 03:44:21 by vchaillo         ###   ########.fr       */
+/*   Created: 2014/11/04 16:58:12 by vchaillo          #+#    #+#             */
+/*   Updated: 2014/11/22 07:44:03 by vchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_putstr(char const *s)
 {
-	t_list	*next_elem;
+	int		i;
 
-	if (alst && *alst && *del)
+	i = 0;
+	if (s != NULL)
 	{
-		while (*alst)
+		while (s[i])
 		{
-			next_elem = *alst;
-			ft_lstdelone(alst, del);
-			free(*alst);
-			*alst = next_elem->next;
+			ft_putchar(s[i]);
+			i++;
 		}
-		*alst = NULL;
 	}
 }
