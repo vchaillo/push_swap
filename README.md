@@ -1,12 +1,7 @@
 push_swap
 =========
 
-Todo list:
-==========
-- \ dans les parametres
+* [Subject] (https://github.com/vchaillo/push_swap/blob/master/push_swap.pdf)
 
-A verifier avant rendu:
-======================
-- Verifier la norme
-- Verifier les fonctions interdites
-- Enlever wildcard Makefile norm
+=============
+Project of 42
