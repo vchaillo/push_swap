@@ -12,7 +12,17 @@ Through this project, you will have to sort a stack with a limit number of instr
 ### Usage
 
 ```
-./rtv1 [-v, -V] [-s1...5]
+SYNOPSIS :
+./push swap OPTIONS [NUMBERS TO SORT]
+
+OPTIONS :
+  -c    colors output
+  -n    number of operations count
+  -v    verbose each operation
+
+EXEMPLES :
+./push_swap -cnv 15 34 7 3 32 10 28 1 47 21 22 41 35 27 14 11 12 17 46
+./push_swap -c 33 27 14 11 42 21 22 41
 ```
 
 ###### Project of school 42
